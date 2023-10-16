@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import Card from './components/ServerSide/Cards';
 import HomePageTopBar from './components/ClientSide/TopBar';
 import fetchByRegion from '@/lib/fetchByRegion';
+import fetchCountry from '@/lib/fetchCountry';
 
 const Home = async ({ searchParams }) => {
 
@@ -12,9 +13,15 @@ const Home = async ({ searchParams }) => {
 	let displayedCountries = allCountries
 
 	if (searchParams.q) {
-		displayedCountries = allCountries.filter(country => (country.name.common.toLowerCase().includes(searchParams.q)));
+		if (!searchParams.region) {
+			const countryPromise = fetchCountry(searchParams.q)
+			const countryData = await countryPromise
+			displayedCountries = countryData
+		} else {
+			console.log('mtav else ')
+			displayedCountries = allCountries.filter(country => (country.name.common.toLowerCase().includes(searchParams.q)));
+		}
 	}
-
 	return (
 		<main className={styles.main}>
 			<section>
