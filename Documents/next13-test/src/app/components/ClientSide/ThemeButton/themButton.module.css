@@ -1,0 +1,14 @@
+.modeBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  width: 150px;
+  font-size: 16px;
+}
+
+.modeBox svg {
+  width: 30px;
+  fill: var(--text_color);
+}

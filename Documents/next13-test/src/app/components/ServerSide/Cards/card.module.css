@@ -1,0 +1,30 @@
+.cardBox {
+  width: 300px;
+  position: relative;
+  height: 500px;
+  background: var(--header_background_color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 4px;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.countryName {
+  margin-top: 10px;
+  margin-left: 10%;
+  font-size: 16px;
+}
+
+.bottomInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10%;
+  gap: 5px;
+}
+
+.bottomInfo > p > :first-child {
+  font-weight: 600;
+}

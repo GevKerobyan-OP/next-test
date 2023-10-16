@@ -1,0 +1,17 @@
+.headerLayout {
+  width: 100vw;
+  background: var(--header_background_color);
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: var(--text_color);
+  z-index: 10;
+}
+.container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  padding: var(--header_padding);
+}
